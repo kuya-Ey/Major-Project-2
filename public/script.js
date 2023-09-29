@@ -1,26 +1,27 @@
 function fetchJoke() {
-  const jokeContainer = document.getElementById('joke-login');
+const jokeContainer = document.getElementById('joke-login');
 
-  // Make a GET request to the Dad Joke API
-  fetch('https://icanhazdadjoke.com/', {
-      headers: {
-          'Accept': 'application/json',
-      }
-  })
-      .then(response => response.json())
-      .then(data => {
+fetch('https://icanhazdadjoke.com/', {
+    headers: {
+        'Accept': 'application/json',
+    }
+})
+    .then(response => response.json())
+    .then(data => {
         // Log the JSON response to the console
         console.log(data);
-        
           // Update the HTML with the fetched joke
-          jokeContainer.innerHTML = `<p>"${data.joke}"</p>`;
-      })
-      .catch(error => {
-          console.error('Error fetching joke:', error);
-      });
+        jokeContainer.innerHTML = `<p>"${data.joke}"</p>`;
+    })
+    .catch(error => {
+        console.error('Error fetching joke:', error);
+    });
 }
 
-let currentPage = 1;
+
+
+// Function to fetch and display dad jokes
+let currentPage = 1; // Initialize currentPage to 1
 
 // Function to fetch and display dad jokes
 function fetchJokes() {
@@ -29,7 +30,7 @@ function fetchJokes() {
     const limit = 8; // Number of jokes per page
 
     let apiUrl = `https://icanhazdadjoke.com/search?page=${currentPage}&limit=${limit}`;
-    
+
     if (searchInput !== "") {
         apiUrl += `&term=${encodeURIComponent(searchInput)}`;
     }
@@ -64,10 +65,16 @@ function fetchJokes() {
         });
 }
 
+// Function to search for jokes
+function searchJokes() {
+    currentPage = 1; // Reset to the first page when searching
+    fetchJokes();
+}
 // Function to increment the page
 function nextPage() {
     currentPage++;
     fetchJokes();
+    updateCurrentPage();
 }
 
 // Function to decrement the page
@@ -75,17 +82,21 @@ function prevPage() {
     if (currentPage > 1) {
         currentPage--;
         fetchJokes();
+        updateCurrentPage();
     }
 }
 
-// Function to search for jokes
-function searchJokes() {
-    currentPage = 1; // Reset to the first page when searching
-    fetchJokes();
+// Function to update the current page display
+function updateCurrentPage() {
+    const currentPageSpan = document.getElementById('current-page');
+    currentPageSpan.textContent = currentPage;
 }
 
 // Initial fetch when the page loads
 fetchJokes();
+
+
+
 
 
 

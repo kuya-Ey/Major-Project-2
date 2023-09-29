@@ -33,6 +33,10 @@ app.use(express.static('js'));
 
 app.use('/', router);
 
+app.get("/signup", (req, res,) => {
+    res.render("signup");
+})
+
 app.listen(port, ()=>{
     console.log(`The server is running at http://${hostname}:${port}.`);
 });

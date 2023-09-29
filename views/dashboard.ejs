@@ -10,45 +10,37 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="text" id="search-input" placeholder="Search for dad jokes" aria-label="Search">
-          <button type="submit" id="search-button" onclick="searchJokes()">Search</button>
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search-input">
+          <button class="btn btn-outline-primary" type="submit" onclick="searchJokes()">Search</button>
         </form>
-        <a href="/logout" class="btn btn-primary">
-          <i class="bi bi-box-arrow-left"></i> Log Out
-        </a>
+          <button type="button" class="btn btn-primary" href="/logout">Log Out</button>
       </div>
-      
-      
     </div>
     <div class="joke-body">
       <div id="joke-container">
         <!-- Jokes will be displayed here -->
       </div>
     </div>
+    <nav aria-label="Jokes Pagination">
+      <ul class="pagination justify-content-center">
+          <li class="page-item mr-2"> <!-- Add margin-right to the "Previous" item -->
+              <a class="page-link" href="#" onclick="prevPage()" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+              </a>
+          </li>
+          <div class="text-center">
+            <p>Page <span id="current-page">1</span></p>
+          </div>
+          <li class="page-item">
+              <a class="page-link" href="#" onclick="nextPage()" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+              </a>
+          </li>
+      </ul>
+  </nav>
   
-    <div>
-      <button onclick="prevPage()">Previous Page</button>
-      <button onclick="nextPage()">Next Page</button>
-    </div>
+    
   </nav>
   
 

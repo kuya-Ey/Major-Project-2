@@ -49,6 +49,24 @@ router.post('/login',
     }
 });
 
+function validateForm() {
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+    const passwordError = document.getElementById('password-error');
+
+    if (password !== confirmPassword) {
+        passwordError.textContent = "Passwords do not match.";
+        return false;
+    }
+
+    if (password.length < 8) {
+        passwordError.textContent = "Password must be at least 8 characters.";
+        return false;
+    }
+
+    // If validation passes, the form will be submitted
+    return true;
+}
 router.get('/dashboard', (req, res)=>{
     if(req.session.user){
         res.render('dashboard',{title:'Dashboard', user:req.session.user});

@@ -108,8 +108,15 @@ body {
 
 
 .logo {
-    width: 100px;
-    aspect-ratio: 16 / 9;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+}
+
+.project-logo {
+    width: 380px;
+    height: auto;
+    margin-top: 80px;
 }
 
 .form__container {
@@ -359,6 +366,7 @@ button[type="submit"] {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 15px;
     margin: 15px;
+    margin-bottom: 30px;
     padding: 40px;
     align-items:center;
     justify-content: center;
@@ -404,7 +412,11 @@ button[type="submit"] {
 
 .container-fluid {
     width: 1300px;
+    height: 500px;
     position: relative;
-    margin: 20px;
+    margin: 25px;
 }
 
+.error {
+    color: red;
+}
