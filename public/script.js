@@ -46,7 +46,7 @@ function fetchJokes() {
             jokeContainer.innerHTML = '';
 
             if (data.results.length === 0) {
-                jokeContainer.innerHTML = '<p>No jokes found.</p>';
+                jokeContainer.innerHTML = '<p>$No jokes found.</p>';
                 return;
             }
 
