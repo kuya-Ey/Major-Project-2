@@ -27,7 +27,7 @@ let currentPage = 1; // Initialize currentPage to 1
 function fetchJokes() {
     const jokeContainer = document.getElementById('joke-container');
     const searchInput = document.getElementById('search-input').value.trim();
-    const limit = 8; // Number of jokes per page
+    const limit = 6; // Number of jokes per page
 
     let apiUrl = `https://icanhazdadjoke.com/search?page=${currentPage}&limit=${limit}`;
 
@@ -95,7 +95,13 @@ function updateCurrentPage() {
 // Initial fetch when the page loads
 fetchJokes();
 
-
+ // JavaScript to trigger the modal when the link is clicked
+ $(document).ready(function() {
+    $('a[data-toggle="modal"]').click(function() {
+      var target = $(this).data('target');
+      $(target).modal('show');
+    });
+  });
 
 
 

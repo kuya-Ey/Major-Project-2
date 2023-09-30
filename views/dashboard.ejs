@@ -1,50 +1,64 @@
 <%- include('layouts/header')-%>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search-input">
-          <button class="btn btn-outline-primary" type="submit" onclick="searchJokes()">Search</button>
-        </form>
-          <button type="button" class="btn btn-primary" href="/logout">Log Out</button>
-      </div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary container text-center">
+  <div class="container-fluid">
+    <img src="/static/assets/Jukz-logo.png" alt="Jukz" class="navbar-logo container text-center">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-4">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" data-toggle="modal" data-target="#logoutModal">
+            Log out
+            <i class="bi bi-emoji-laughing"></i>
+          </a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search-input">
+        <button class="btn btn-outline-primary ml-2" type="submit" onclick="searchJokes()">Search</button>
+      </form>
     </div>
+  </div>
     <div class="joke-body">
       <div id="joke-container">
         <!-- Jokes will be displayed here -->
       </div>
     </div>
-    <nav aria-label="Jokes Pagination">
-      <ul class="pagination justify-content-center">
+    <div class="container text-center"> <!-- Wrap the navigation in a centered container -->
+      <nav aria-label="Jokes Pagination">
+        <ul class="pagination justify-content-center">
           <li class="page-item mr-2"> <!-- Add margin-right to the "Previous" item -->
-              <a class="page-link" href="#" onclick="prevPage()" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-              </a>
+            <a class="page-link" href="#" onclick="prevPage()" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
           </li>
-          <div class="text-center">
-            <p>Page <span id="current-page">1</span></p>
-          </div>
           <li class="page-item">
-              <a class="page-link" href="#" onclick="nextPage()" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-              </a>
+            <p class="page-link">Page <span id="current-page">1</span></p> <!-- Use page-link class for the page number -->
           </li>
-      </ul>
-  </nav>
-  
-    
-  </nav>
-  
-
-
-
-
+          <li class="page-item">
+            <a class="page-link" href="#" onclick="nextPage()" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+</nav>
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to log out?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <a href="/logout" class="btn btn-primary">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
 <%- include('layouts/footer')-%>

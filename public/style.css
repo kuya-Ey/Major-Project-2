@@ -14,7 +14,7 @@ body {
     align-items: center;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
-    background: #c7d8a3;
+    background: #F4F9EA;
 }
 
 .container {
@@ -38,12 +38,9 @@ body {
 }
 
 #joke-login {
-    position: relative;
-    top: -150px;
+    position: absolute;
     width: 1000px;
-    height: 50px;
-    background-color: coral;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 500;
     padding: 0px;
     align-items: center;
@@ -51,9 +48,12 @@ body {
 }
 
 .get-joke {
-    position: absolute;
-    display: inline-block;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 390px;
 }
+
 .btn-class-name {
     --primary: 255, 90, 120;
     --secondary: 150, 50, 60;
@@ -68,9 +68,9 @@ body {
     border-radius: 100%;
     position: relative;
     transition: .3s;
-  }
-  
-  .btn-class-name .back {
+}
+
+.btn-class-name .back {
     background: rgb(var(--secondary));
     border-radius: 100%;
     position: absolute;
@@ -78,9 +78,9 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-  }
-  
-  .btn-class-name .front {
+}
+
+.btn-class-name .front {
     background: linear-gradient(0deg, rgba(var(--primary), .6) 20%, rgba(var(--primary)) 50%);
     box-shadow: 0 .5em 1em -0.2em rgba(var(--secondary), .5);
     border-radius: 100%;
@@ -99,12 +99,12 @@ body {
     transform: translateY(-15%);
     transition: .15s;
     color: rgb(var(--secondary));
-  }
-  
-  .btn-class-name:active .front {
+}
+
+.btn-class-name:active .front {
     transform: translateY(0%);
     box-shadow: 0 0;
-  }
+}
 
 
 .logo {
@@ -246,6 +246,108 @@ button[type="submit"] {
 }
 
 
+
+.joke-body {
+    flex: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content:space-around;
+    background-color: #F4F9EA;
+}
+
+#joke-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    justify-content: space-around;
+    background-color: #F4F9EA;
+
+}
+
+.joke-card {
+    width: 400px;
+    height: 250px;
+    backdrop-filter: blur(7px);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    margin: 15px;
+    margin-bottom: 30px;
+    padding: 40px;
+    align-items:center;
+    justify-content: center;
+    font-size: 19px;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: 35px 35px 58px 0px rgba(157, 177, 255, 0.2), inset -8px -8px 16px 0px rgba(157, 177, 255, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+  
+  .joke-card:hover {
+    box-shadow: 35px 35px 68px 0px rgba(157, 177, 255, 0.5);
+    transform: scale(1.1);
+    transition: .5s ease-in-out;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -ms-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+  
+  .joke-card:active {
+    transform: scale(0.85);
+    border: 1px solid blue;
+    -webkit-transform: scale(0.85);
+    -moz-transform: scale(0.85);
+    -ms-transform: scale(0.85);
+    -o-transform: scale(0.85);
+}
+
+.navbar.navbar-expand-lg.bg-body-tertiary {
+    flex: 100%;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    background-color: #F4F9EA;
+
+}
+
+.container-fluid {
+    width: 1270px;
+    height: 500px;
+    position: relative;
+    margin: 25px;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: #92b5a5;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.error {
+    color: red;
+}
+
+.navbar-logo {
+    width: 180px;
+    aspect-ratio: 16 / 9;
+}
+
+.container text-center {
+    background-color: #F4F9EA;
+
+}
+
 /* responsive layout */
 
 @media (max-width: 425px) {
@@ -343,80 +445,4 @@ button[type="submit"] {
         text-align: center;
         font-size: 34px;
     }
-}
-.joke-body {
-    flex: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items:center;
-    justify-content:space-around;
-}
-
-#joke-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items:flex-start;
-    justify-content: space-around;
-}
-
-.joke-card {
-    width: 400px;
-    height: 250px;
-    backdrop-filter: blur(7px);
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 15px;
-    margin: 15px;
-    margin-bottom: 30px;
-    padding: 40px;
-    align-items:center;
-    justify-content: center;
-    font-size: 19px;
-    font-weight: 500;
-    text-align: center;
-    box-shadow: 35px 35px 58px 0px rgba(157, 177, 255, 0.2), inset -8px -8px 16px 0px rgba(157, 177, 255, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
-    transition: all 0.3s;
-    cursor: pointer;
-}
-  
-  .joke-card:hover {
-    box-shadow: 35px 35px 68px 0px rgba(157, 177, 255, 0.5);
-    transform: scale(1.1);
-    transition: .5s ease-in-out;
-    -webkit-transition: .5s ease-in-out;
-    -moz-transition: .5s ease-in-out;
-    -ms-transition: .5s ease-in-out;
-    -o-transition: .5s ease-in-out;
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-}
-  
-  .joke-card:active {
-    transform: scale(0.85);
-    border: 1px solid blue;
-    -webkit-transform: scale(0.85);
-    -moz-transform: scale(0.85);
-    -ms-transform: scale(0.85);
-    -o-transform: scale(0.85);
-}
-
-.navbar.navbar-expand-lg.bg-body-tertiary {
-    flex: 100%;
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-between;
-}
-
-.container-fluid {
-    width: 1300px;
-    height: 500px;
-    position: relative;
-    margin: 25px;
-}
-
-.error {
-    color: red;
 }
