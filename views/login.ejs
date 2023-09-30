@@ -1,63 +1,56 @@
 <%- include('layouts/header')-%>
-        <!-- Login content goes here -->
-        <div class="container left-container">
-            <div class="form__container">
-                <div class="logo">
-                <img src="/static/assets/Jukz-logo.png" alt="Jukz" class="project-logo">
-                </div>
-                <h1>LOG IN</h1>
-
-                <form action="/login" method="POST">
-
-                <div class="input-group">
-                    <input type="email" name="email" class="input" placeholder="Email" value="jUkz@test.com" required>
-                </div>
-
-                <div class="input-group">
-                    <input type="password" name="password" class="input" placeholder="Password" value="12345678" required>
-                </div>
-
-                <button type="submit" class="btn">
-                    LOG IN
-                </button>
-                </form>
-
-                <p class="desc">Share your funniest line,
-                    <a href="/signup">Sign Up</a>
-                </p>
-                <% if(locals.logout) {%>
-                    <div class="alert alert-success text-center">
-                        <%= logout%>
-                    </div>
-                <%}%>
-                <br>
-                <% if(locals.errors) {%>
-                    <div class="alert alert-danger text-center">
-                        <%= errors%>
-                    </div>
-                <%}%>
-                <% if(locals.isInvalid) {%>
-                    <div class="alert alert-danger text-center">
-                        <%= isInvalid%>
-                    </div>
-                <%}%>
-
-                <div class="api">
-                    <a href="https://icanhazdadjoke.com" target="_blank">Click for the API source</a>
-                </div>
+    <!-- Login content goes here -->
+    <div class="container left-container">
+        <div class="form__container">
+            <div class="logo">
+            <img src="/static/assets/Jukz-logo.png" alt="Jukz" class="project-logo">
             </div>
-        </div>
-
-        <div class="container right-container">
-            <div id="joke-login">
-                <!-- Joke will be displayed here -->
+            <h1>LOG IN</h1>
+            <form action="/login" method="POST">
+            <div class="input-group">
+                <input type="email" name="email" class="input" placeholder="Email" value="jUkz@test.com" required>
             </div>
+            <div class="input-group">
+                <input type="password" name="password" class="input" placeholder="Password" value="12345678" required>
+            </div>
+            <button type="submit" class="btn">
+                LOG IN
+            </button>
+            </form>
+            <p class="signup">Share your funniest line,
+                <a href="/signup">Sign Up</a>
+            </p>
+            <% if(locals.logout) {%>
+                <div class="alert alert-success text-center">
+                    <%= logout%>
+                </div>
+            <%}%>
             <br>
-            <div class="get-joke">
-                <button onclick="fetchJoke()" class="btn-class-name">
-                    <span class="back"></span>
-                    <span class="front"></span>
-                </button>
+            <% if(locals.errors) {%>
+                <div class="alert alert-danger text-center">
+                    <%= errors%>
+                </div>
+            <%}%>
+            <% if(locals.isInvalid) {%>
+                <div class="alert alert-danger text-center">
+                    <%= isInvalid%>
+                </div>
+            <%}%>
+            <div class="api">
+                <a href="https://icanhazdadjoke.com" target="_blank">Click for the API source</a>
             </div>
         </div>
+    </div>
+
+    <div class="container right-container">
+        <div id="joke-login">
+            <!-- Joke will be displayed here -->
+        </div>
+        <div class="get-joke">
+            <button onclick="fetchJoke()" class="btn-class-name">
+                <span class="back"></span>
+                <span class="front"></span>
+            </button>
+        </div>
+    </div>
 <%- include('layouts/footer')-%>
