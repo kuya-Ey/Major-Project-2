@@ -18,8 +18,6 @@ fetch('https://icanhazdadjoke.com/', {
     });
 }
 
-
-
 // Function to fetch and display dad jokes
 let currentPage = 1; // Initialize currentPage to 1
 
@@ -96,12 +94,12 @@ function updateCurrentPage() {
 fetchJokes();
 
  // JavaScript to trigger the modal when the link is clicked
- $(document).ready(function() {
-    $('a[data-toggle="modal"]').click(function() {
-      var target = $(this).data('target');
-      $(target).modal('show');
+$(document).ready(function() {
+$('a[data-toggle="modal"]').click(function() {
+    var target = $(this).data('target');
+    $(target).modal('show');
     });
-  });
+});
 
 
 

@@ -84,7 +84,7 @@ router.get('/logout', (req, res)=>{
             res.render('login', {title:'Login Page', logout:'Logout successfully!'});
         }
     });
-   
+
 });
 
 

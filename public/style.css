@@ -117,6 +117,8 @@ body {
     width: 380px;
     height: auto;
     margin-top: 80px;
+    align-items: center;
+    justify-content: center;
 }
 
 .form__container {
@@ -374,6 +376,22 @@ button[type="submit"] {
     .form__container h1 {
         text-align: center;
     }
+
+    #joke-login {
+        display: none;
+    }
+
+    .get-joke {
+        display: none;
+    }
+
+    .project-logo {
+        width: 280px;
+        height: auto;
+        margin-top: 60px;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 
@@ -395,6 +413,14 @@ button[type="submit"] {
 
     .form__container h1 {
         text-align: center;
+    }
+
+    .project-logo {
+        width: 280px;
+        height: auto;
+        margin-top: 60px;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -423,6 +449,14 @@ button[type="submit"] {
         padding: 2rem;
         font-size: 34px;
     }
+
+    .project-logo {
+        width: 280px;
+        height: auto;
+        margin-top: 60px;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 @media (min-width: 1441px) and (max-width: 2560px) {
@@ -444,5 +478,13 @@ button[type="submit"] {
     .form__container h1 {
         text-align: center;
         font-size: 34px;
+    }
+
+    .project-logo {
+        width: 280px;
+        height: auto;
+        margin-top: 60px;
+        align-items: center;
+        justify-content: center;
     }
 }
